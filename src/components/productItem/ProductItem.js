@@ -19,7 +19,7 @@ const ProductItem = ({item}) => {
         <View style={styles.ratingContainer}>
           {[1, 2, 3, 4, 5].map((e, i) => (
             <FontAwesome
-              key={e + i}
+              key={e + item.id}
               style={styles.star}
               name={
                 e <= item.avgRating

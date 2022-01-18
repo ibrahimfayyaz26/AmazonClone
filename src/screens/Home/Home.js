@@ -12,7 +12,6 @@ const Home = () => {
         renderItem={({item}) => <ProductItem item={item} />}
         showsVerticalScrollIndicator={false}
       />
-      {/* <ProductItem item={products[1]} /> */}
     </View>
   );
 };
