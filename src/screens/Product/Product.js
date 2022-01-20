@@ -20,7 +20,7 @@ const Product = () => {
         selectedValue={option}
         onValueChange={itemValue => setOption(itemValue)}>
         {product.options.map(op => (
-          <Picker.Item label={op} value={op} />
+          <Picker.Item key={op} label={op} value={op} />
         ))}
       </Picker>
       <Text style={styles.price}>
