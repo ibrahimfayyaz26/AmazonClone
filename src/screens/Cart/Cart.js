@@ -2,9 +2,16 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, FlatList} from 'react-native';
 import CartProductItem from '../../components/cartProductItem/CartProductItem';
 import products from '../../data/cart';
+import {useNavigation} from '@react-navigation/native';
 import ButtonCo from '../../components/button/ButtonCo';
 
 const Cart = () => {
+  const navigation = useNavigation();
+
+  const checkout = () => {
+    navigation.navigate('address');
+  };
+
   const totalPrice = products.reduce(
     (summedPrice, product) =>
       summedPrice + (product?.item?.price || 0) * product.quantity,
@@ -28,7 +35,7 @@ const Cart = () => {
             </Text>
             <ButtonCo
               text="Proceed to checkout"
-              press={() => console.warn('hello3')}
+              press={checkout}
               containerStyles={{
                 backgroundColor: '#f7e300',
                 borderColor: '#c7b702',

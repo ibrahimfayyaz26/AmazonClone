@@ -6,12 +6,18 @@ import {Picker} from '@react-native-picker/picker';
 import QuantitySelector from '../../components/qunatitySelector/QuantitySelector';
 import ButtonCo from '../../components/button/ButtonCo';
 import ImageCarousel from '../../components/imageCarousel/ImageCarousel';
+import {useRoute} from '@react-navigation/native';
 
 const Product = () => {
   const [option, setOption] = useState(
     product.options ? product.options[0] : null,
   );
   const [qunatity, setQunatity] = useState(0);
+
+  const route = useRoute();
+
+  console.warn(route.params);
+
   return (
     <ScrollView>
       <View style={styles.container}>
